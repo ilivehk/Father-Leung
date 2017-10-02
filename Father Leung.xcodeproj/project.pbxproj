@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FE3CDE71F82BC910066A6FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3CDE61F82BC910066A6FE /* AppDelegate.swift */; };
+		0FE3CDE91F82BC910066A6FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3CDE81F82BC910066A6FE /* ViewController.swift */; };
+		0FE3CDEC1F82BC910066A6FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE3CDEA1F82BC910066A6FE /* Main.storyboard */; };
+		0FE3CDEE1F82BC910066A6FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FE3CDED1F82BC910066A6FE /* Assets.xcassets */; };
+		0FE3CDF11F82BC910066A6FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE3CDEF1F82BC910066A6FE /* LaunchScreen.storyboard */; };
+		0FE3CDFC1F82BC910066A6FE /* Father_LeungTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3CDFB1F82BC910066A6FE /* Father_LeungTests.swift */; };
+		0FE3CE071F82BC910066A6FE /* Father_LeungUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE3CE061F82BC910066A6FE /* Father_LeungUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FE3CDF81F82BC910066A6FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FE3CDDB1F82BC910066A6FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FE3CDE21F82BC910066A6FE;
+			remoteInfo = "Father Leung";
+		};
+		0FE3CE031F82BC910066A6FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FE3CDDB1F82BC910066A6FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FE3CDE21F82BC910066A6FE;
+			remoteInfo = "Father Leung";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FE3CDE31F82BC910066A6FE /* Father Leung.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Father Leung.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE3CDE61F82BC910066A6FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FE3CDE81F82BC910066A6FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FE3CDEB1F82BC910066A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FE3CDED1F82BC910066A6FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FE3CDF01F82BC910066A6FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FE3CDF21F82BC910066A6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FE3CDF71F82BC910066A6FE /* Father LeungTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Father LeungTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE3CDFB1F82BC910066A6FE /* Father_LeungTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Father_LeungTests.swift; sourceTree = "<group>"; };
+		0FE3CDFD1F82BC910066A6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FE3CE021F82BC910066A6FE /* Father LeungUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Father LeungUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FE3CE061F82BC910066A6FE /* Father_LeungUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Father_LeungUITests.swift; sourceTree = "<group>"; };
+		0FE3CE081F82BC910066A6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FE3CDE01F82BC910066A6FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE3CDF41F82BC910066A6FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE3CDFF1F82BC910066A6FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FE3CDDA1F82BC910066A6FE = {
+			isa = PBXGroup;
+			children = (
+				0FE3CDE51F82BC910066A6FE /* Father Leung */,
+				0FE3CDFA1F82BC910066A6FE /* Father LeungTests */,
+				0FE3CE051F82BC910066A6FE /* Father LeungUITests */,
+				0FE3CDE41F82BC910066A6FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FE3CDE41F82BC910066A6FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FE3CDE31F82BC910066A6FE /* Father Leung.app */,
+				0FE3CDF71F82BC910066A6FE /* Father LeungTests.xctest */,
+				0FE3CE021F82BC910066A6FE /* Father LeungUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FE3CDE51F82BC910066A6FE /* Father Leung */ = {
+			isa = PBXGroup;
+			children = (
+				0FE3CDE61F82BC910066A6FE /* AppDelegate.swift */,
+				0FE3CDE81F82BC910066A6FE /* ViewController.swift */,
+				0FE3CDEA1F82BC910066A6FE /* Main.storyboard */,
+				0FE3CDED1F82BC910066A6FE /* Assets.xcassets */,
+				0FE3CDEF1F82BC910066A6FE /* LaunchScreen.storyboard */,
+				0FE3CDF21F82BC910066A6FE /* Info.plist */,
+			);
+			path = "Father Leung";
+			sourceTree = "<group>";
+		};
+		0FE3CDFA1F82BC910066A6FE /* Father LeungTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FE3CDFB1F82BC910066A6FE /* Father_LeungTests.swift */,
+				0FE3CDFD1F82BC910066A6FE /* Info.plist */,
+			);
+			path = "Father LeungTests";
+			sourceTree = "<group>";
+		};
+		0FE3CE051F82BC910066A6FE /* Father LeungUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0FE3CE061F82BC910066A6FE /* Father_LeungUITests.swift */,
+				0FE3CE081F82BC910066A6FE /* Info.plist */,
+			);
+			path = "Father LeungUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FE3CDE21F82BC910066A6FE /* Father Leung */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FE3CE0B1F82BC910066A6FE /* Build configuration list for PBXNativeTarget "Father Leung" */;
+			buildPhases = (
+				0FE3CDDF1F82BC910066A6FE /* Sources */,
+				0FE3CDE01F82BC910066A6FE /* Frameworks */,
+				0FE3CDE11F82BC910066A6FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Father Leung";
+			productName = "Father Leung";
+			productReference = 0FE3CDE31F82BC910066A6FE /* Father Leung.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0FE3CDF61F82BC910066A6FE /* Father LeungTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FE3CE0E1F82BC910066A6FE /* Build configuration list for PBXNativeTarget "Father LeungTests" */;
+			buildPhases = (
+				0FE3CDF31F82BC910066A6FE /* Sources */,
+				0FE3CDF41F82BC910066A6FE /* Frameworks */,
+				0FE3CDF51F82BC910066A6FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FE3CDF91F82BC910066A6FE /* PBXTargetDependency */,
+			);
+			name = "Father LeungTests";
+			productName = "Father LeungTests";
+			productReference = 0FE3CDF71F82BC910066A6FE /* Father LeungTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0FE3CE011F82BC910066A6FE /* Father LeungUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FE3CE111F82BC910066A6FE /* Build configuration list for PBXNativeTarget "Father LeungUITests" */;
+			buildPhases = (
+				0FE3CDFE1F82BC910066A6FE /* Sources */,
+				0FE3CDFF1F82BC910066A6FE /* Frameworks */,
+				0FE3CE001F82BC910066A6FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FE3CE041F82BC910066A6FE /* PBXTargetDependency */,
+			);
+			name = "Father LeungUITests";
+			productName = "Father LeungUITests";
+			productReference = 0FE3CE021F82BC910066A6FE /* Father LeungUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FE3CDDB1F82BC910066A6FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = noading;
+				TargetAttributes = {
+					0FE3CDE21F82BC910066A6FE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					0FE3CDF61F82BC910066A6FE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0FE3CDE21F82BC910066A6FE;
+					};
+					0FE3CE011F82BC910066A6FE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0FE3CDE21F82BC910066A6FE;
+					};
+				};
+			};
+			buildConfigurationList = 0FE3CDDE1F82BC910066A6FE /* Build configuration list for PBXProject "Father Leung" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FE3CDDA1F82BC910066A6FE;
+			productRefGroup = 0FE3CDE41F82BC910066A6FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FE3CDE21F82BC910066A6FE /* Father Leung */,
+				0FE3CDF61F82BC910066A6FE /* Father LeungTests */,
+				0FE3CE011F82BC910066A6FE /* Father LeungUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FE3CDE11F82BC910066A6FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE3CDF11F82BC910066A6FE /* LaunchScreen.storyboard in Resources */,
+				0FE3CDEE1F82BC910066A6FE /* Assets.xcassets in Resources */,
+				0FE3CDEC1F82BC910066A6FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE3CDF51F82BC910066A6FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE3CE001F82BC910066A6FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FE3CDDF1F82BC910066A6FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE3CDE91F82BC910066A6FE /* ViewController.swift in Sources */,
+				0FE3CDE71F82BC910066A6FE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE3CDF31F82BC910066A6FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE3CDFC1F82BC910066A6FE /* Father_LeungTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FE3CDFE1F82BC910066A6FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FE3CE071F82BC910066A6FE /* Father_LeungUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FE3CDF91F82BC910066A6FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FE3CDE21F82BC910066A6FE /* Father Leung */;
+			targetProxy = 0FE3CDF81F82BC910066A6FE /* PBXContainerItemProxy */;
+		};
+		0FE3CE041F82BC910066A6FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FE3CDE21F82BC910066A6FE /* Father Leung */;
+			targetProxy = 0FE3CE031F82BC910066A6FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0FE3CDEA1F82BC910066A6FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FE3CDEB1F82BC910066A6FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FE3CDEF1F82BC910066A6FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FE3CDF01F82BC910066A6FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FE3CE091F82BC910066A6FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FE3CE0A1F82BC910066A6FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FE3CE0C1F82BC910066A6FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Father Leung/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noading.Father-Leung";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FE3CE0D1F82BC910066A6FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Father Leung/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noading.Father-Leung";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0FE3CE0F1F82BC910066A6FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Father LeungTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noading.Father-LeungTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Father Leung.app/Father Leung";
+			};
+			name = Debug;
+		};
+		0FE3CE101F82BC910066A6FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Father LeungTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noading.Father-LeungTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Father Leung.app/Father Leung";
+			};
+			name = Release;
+		};
+		0FE3CE121F82BC910066A6FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Father LeungUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noading.Father-LeungUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Father Leung";
+			};
+			name = Debug;
+		};
+		0FE3CE131F82BC910066A6FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Father LeungUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.noading.Father-LeungUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Father Leung";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FE3CDDE1F82BC910066A6FE /* Build configuration list for PBXProject "Father Leung" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FE3CE091F82BC910066A6FE /* Debug */,
+				0FE3CE0A1F82BC910066A6FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FE3CE0B1F82BC910066A6FE /* Build configuration list for PBXNativeTarget "Father Leung" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FE3CE0C1F82BC910066A6FE /* Debug */,
+				0FE3CE0D1F82BC910066A6FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FE3CE0E1F82BC910066A6FE /* Build configuration list for PBXNativeTarget "Father LeungTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FE3CE0F1F82BC910066A6FE /* Debug */,
+				0FE3CE101F82BC910066A6FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FE3CE111F82BC910066A6FE /* Build configuration list for PBXNativeTarget "Father LeungUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FE3CE121F82BC910066A6FE /* Debug */,
+				0FE3CE131F82BC910066A6FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FE3CDDB1F82BC910066A6FE /* Project object */;
+}
