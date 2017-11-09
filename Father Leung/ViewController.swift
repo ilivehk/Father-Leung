@@ -390,20 +390,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         downloadFile(song: mp3Link3 as String)
 
         }
-        
-        
 
-        
-        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        
+       
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
