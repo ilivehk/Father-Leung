@@ -69,6 +69,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 1
     }
     
+    
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if pickerView == yearPickerView {
@@ -110,12 +112,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         loadpage(year: Int(currentYear)!, month: Int(currentMonth)!)
         
-        
+        loadContent()
     }
+  
     
-    @IBAction func goButton(_ sender: Any) {
+    func loadContent(){
         
-
+        
         let tableArr = UserDefaults.standard.object(forKey: "tableArray")
         if let arrayObject = tableArr as? NSArray {
             
@@ -125,6 +128,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             table.reloadData()
             
+            print("loadContent sucess")
+            
+            
+        }else{
+            
+            print("error load content")
             
         }
         
