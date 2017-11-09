@@ -6,6 +6,8 @@
 //  Copyright © 2017年 noading. All rights reserved.
 //
 
+import AudioToolbox
+import AVFoundation
 import UIKit
 
 @UIApplicationMain
