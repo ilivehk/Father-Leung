@@ -17,9 +17,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var tablev = [String]()
     var player:AVAudioPlayer = AVAudioPlayer()
     var audioPlayer:AVAudioPlayer!
-     let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     
-
+    
     
     @IBOutlet weak var dateText: UITextField!
     @IBOutlet weak var table: UITableView!
@@ -34,27 +34,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func actionButton(_ sender: Any) {
         
         if playButtonEnable {
-        
-        if audioPlayer.isPlaying {
             
-            audioPlayer.pause()
-            self.topBar.rightBarButtonItem?.title = "Pause"
-            
-            
-        }else {
-            
-           audioPlayer.play()
-            self.topBar.rightBarButtonItem?.title = "Play"
-            
-            
-        }
+            if audioPlayer.isPlaying {
+                
+                audioPlayer.pause()
+                self.topBar.rightBarButtonItem?.title = "Pause"
+                
+                
+            }else {
+                
+                audioPlayer.play()
+                self.topBar.rightBarButtonItem?.title = "Play"
+                
+                
+            }
         }else{
             
             print("no play yet")
             
         }
         
-    
+        
     }
     
     
@@ -74,9 +74,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if pickerView == yearPickerView {
-             return year[row]
+            return year[row]
         } else if pickerView == monthPickerView{
-             return month[row]
+            return month[row]
         } else {
             
             return month[row]
@@ -89,16 +89,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         if pickerView == yearPickerView {
-                return year.count
+            return year.count
         } else if pickerView == monthPickerView{
-                return month.count
+            return month.count
         } else {
-               return month.count
+            return month.count
         }
         
         
         
-    
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -112,9 +112,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         loadpage(year: Int(currentYear)!, month: Int(currentMonth)!)
         
-        loadContent()
+       // loadContent()
+        table.reloadData()
     }
-  
+    
+    
+    @IBAction func goButton(_ sender: Any) {
+        
+        
+        let tableArr = UserDefaults.standard.object(forKey: "tableArray")
+        if let arrayObject = tableArr as? NSArray {
+            
+            print(arrayObject.count)
+            print(arrayObject[1])
+            tablev = arrayObject as! [String]
+            
+            table.reloadData()
+            
+            print("loadContent sucess")
+            
+            
+        }else{
+            
+            print("error load content")
+            
+        }
+        
+        
+    }
+    
     
     func loadContent(){
         
@@ -126,7 +152,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(arrayObject[1])
             tablev = arrayObject as! [String]
             
-            table.reloadData()
+       //     table.reloadData()
             
             print("loadContent sucess")
             
@@ -175,10 +201,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func playdownload(song: String) {
         
         if let audioUrl = URL(string: song) {
-
+            
             let documentsDirectoryURL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let destinationUrl = documentsDirectoryURL.appendingPathComponent(audioUrl.lastPathComponent)
-
+            
             configureCommandCenter()
             
             do {
@@ -189,8 +215,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 guard let player = audioPlayer else { return }
                 
                 MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: "梁神父講道"]
-
-
+                
+                
                 player.prepareToPlay()
                 player.play()
                 showPlay()
@@ -198,10 +224,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             } catch let error {
                 print(error.localizedDescription)     
             }
-           
+            
         }
         
-
+        
         
     }
     
@@ -209,7 +235,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func downloadFile(song:String) {
         
-       
+        
         
         if let audioUrl = URL(string: song) {
             
@@ -227,8 +253,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // if the file doesn't exist
             } else {
                 
-                 activity(On: true)
-             
+                activity(On: true)
+                
                 
                 // you can use NSURLSession.sharedSession to download the data asynchronously
                 URLSession.shared.downloadTask(with: audioUrl, completionHandler: { (location, response, error) -> Void in
@@ -250,12 +276,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
             }
             
-           
-    
-        
+            
+            
+            
         }
         
-      
+        
         
     }
     
@@ -287,7 +313,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let task = URLSession.shared.dataTask(with: request as URLRequest) {
                 data, response, error in
                 
-                if let error = error {
+                if let error = error?.localizedDescription {
                     
                     print(error)
                     
@@ -296,18 +322,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     if let unwrappedData = data {
                         
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)!
-                        
-                        //  print(dataString!)
-                        
+                     
                         let seperator = "<div class='day-number'>"
                         
-                        //  let sepArray = (dataString?.components(separatedBy: seperator))!
                         
                         talkArray = (dataString.components(separatedBy: seperator))
                         
                         UserDefaults.standard.set(talkArray, forKey: "tableArray")
                         
-                        
+                        DispatchQueue.main.async {
+                            self.loadContent()
+                            self.table.reloadData()
+                        }
+                     
                     }
                     
                     
@@ -334,7 +361,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
@@ -353,13 +380,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             titleC2 = titleC1[0]
         }else {
             
-           na = "N/A "
+            na = "N/A "
         }
         
         
         
         cell.textLabel?.text = String(na + titleA[0] + "日 " + titleB1[0] + "-" + titleC2)
-
+        
         return cell
         
     }
@@ -382,40 +409,40 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
             }
         }
-      
+        
         
         let mp3Link = NSString(string:tablev[indexPath.row+1])
         
         if mp3Link.contains("MP3"){
-        
-        let mp3Link1 = mp3Link.components(separatedBy: "<a href='")
-        
-        let mp3Link2 = mp3Link1[1].components(separatedBy: "' target='_blank'>")
             
-        let mp3Link3 = "http://www.frpeterleung.com" + mp3Link2[0]
-        
-        print(mp3Link3)
+            let mp3Link1 = mp3Link.components(separatedBy: "<a href='")
             
-        downloadFile(song: mp3Link3 as String)
-
+            let mp3Link2 = mp3Link1[1].components(separatedBy: "' target='_blank'>")
+            
+            let mp3Link3 = "http://www.frpeterleung.com" + mp3Link2[0]
+            
+            print(mp3Link3)
+            
+            downloadFile(song: mp3Link3 as String)
+            
         }
-
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
         
-  
-  
+        
+        
         yearPickerView.selectRow(8, inComponent: 0, animated: true)
         monthPickerView.selectRow(9, inComponent: 0, animated: true)
-
+        
         let tableArr = UserDefaults.standard.object(forKey: "tableArray")
         if let arrayObject = tableArr as? NSArray {
             
@@ -435,20 +462,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
-                   UIApplication.shared.beginIgnoringInteractionEvents()
+            UIApplication.shared.beginIgnoringInteractionEvents()
             
         }else {
             print("activityOffed")
             
             DispatchQueue.main.async {
-                 UIApplication.shared.endIgnoringInteractionEvents()
+                UIApplication.shared.endIgnoringInteractionEvents()
                 self.activityIndicator.stopAnimating()
                 self.activityIndicator.isHidden = true
             }
             
         }
- 
+        
         
     }
-
+    
 }
