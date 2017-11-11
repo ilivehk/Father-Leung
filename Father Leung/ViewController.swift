@@ -18,9 +18,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var player:AVAudioPlayer = AVAudioPlayer()
     var audioPlayer:AVAudioPlayer!
     let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+    var chinese = true
+    var lang = "c"
+    var displayTitle = "梁達財神父講道"
     
     
-    
+    @IBOutlet weak var displayMonthLabel: UILabel!
+    @IBOutlet weak var displayYearLabel: UILabel!
+    @IBOutlet weak var langButton: UIButton!
     @IBOutlet weak var dateText: UITextField!
     @IBOutlet weak var table: UITableView!
     
@@ -30,6 +35,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var rightBarButton: UIBarButtonItem!
     @IBOutlet weak var topBar: UINavigationItem!
     
+    @IBAction func languageButton(_ sender: Any) {
+        
+        if chinese {
+            
+            langButton.setTitle("Eng", for: .normal)
+            chinese = false
+            displayYearLabel.text = "Year"
+            displayMonthLabel.text = "Month"
+            lang = "e"
+            topBar.title = "Father Leung Homily"
+            displayTitle = "Father Leung Homily"
+            
+        }else {
+            
+            langButton.setTitle("中", for: .normal)
+            chinese = true
+            displayYearLabel.text = "年"
+            displayMonthLabel.text = "月"
+            lang = "c"
+            topBar.title = "梁達財神父講道"
+            displayTitle = "梁達財神父講道"
+        }
+        
+        
+    }
     
     @IBAction func actionButton(_ sender: Any) {
         
@@ -38,13 +68,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if audioPlayer.isPlaying {
                 
                 audioPlayer.pause()
-                self.topBar.rightBarButtonItem?.title = "Pause"
-                
+                //self.topBar.rightBarButtonItem?.title = "Pause"
+                let pauseButton = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(actionButton(_:))) //Use a selector
+                topBar.rightBarButtonItem = pauseButton
                 
             }else {
                 
                 audioPlayer.play()
-                self.topBar.rightBarButtonItem?.title = "Play"
+                //self.topBar.rightBarButtonItem?.title = "Play"
+                let playButton = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(actionButton(_:))) //Use a selector
+                topBar.rightBarButtonItem = playButton
                 
                 
             }
@@ -214,7 +247,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 guard let player = audioPlayer else { return }
                 
-                MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: "梁神父講道"]
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = [MPMediaItemPropertyTitle: displayTitle]
                 
                 
                 player.prepareToPlay()
@@ -306,7 +339,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var talkArray = [String]()
         
         
-        if let url = URL(string: "http://www.frpeterleung.com/homily-calendar.php?lang=c&y=" + String(year) + "&m=" + String(month)) {
+        if let url = URL(string: "http://www.frpeterleung.com/homily-calendar.php?lang="+lang+"&y=" + String(year) + "&m=" + String(month)) {
             
             let request = NSMutableURLRequest(url: url)
             

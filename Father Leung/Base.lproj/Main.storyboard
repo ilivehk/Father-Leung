@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXV-qd-WsG">
-                                <rect key="frame" x="105" y="659" width="70" height="77"/>
+                                <rect key="frame" x="140.66666666666666" y="659" width="70" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="FdY-Qn-MqF"/>
                                     <constraint firstAttribute="height" constant="77" id="eCT-I9-x5Y"/>
@@ -58,8 +58,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="o8O-eh-A6Y"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvT-5e-DMw">
-                                <rect key="frame" x="232.66666666666666" y="684" width="56.333333333333343" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvT-5e-DMw">
+                                <rect key="frame" x="268.33333333333331" y="684" width="20.666666666666686" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,8 +75,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="xWH-CC-eaj"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOS-RH-MaB">
-                                <rect key="frame" x="59" y="684" width="38.666666666666657" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOS-RH-MaB">
+                                <rect key="frame" x="112.66666666666667" y="684" width="20.666666666666671" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,7 +85,17 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="梁達財神父講道" id="eQi-Eh-C91">
-                                        <barButtonItem key="rightBarButtonItem" title="Play" id="EB1-sA-Ap6">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="W3p-Y8-ffv">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pve-uv-bfw">
+                                                <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="中"/>
+                                                <connections>
+                                                    <action selector="languageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I3l-DB-aQZ"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="EB1-sA-Ap6">
                                             <connections>
                                                 <action selector="actionButton:" destination="BYZ-38-t0r" id="cgc-WB-OE5"/>
                                             </connections>
@@ -119,6 +129,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="displayMonthLabel" destination="JvT-5e-DMw" id="5Qt-BJ-9Hy"/>
+                        <outlet property="displayYearLabel" destination="aOS-RH-MaB" id="k48-4I-g7h"/>
+                        <outlet property="langButton" destination="pve-uv-bfw" id="FHI-go-GXP"/>
                         <outlet property="monthPickerView" destination="O5O-hU-giP" id="FNc-Tl-jrp"/>
                         <outlet property="rightBarButton" destination="EB1-sA-Ap6" id="npq-bs-me8"/>
                         <outlet property="table" destination="qw9-Bh-9IN" id="vVW-vA-5CF"/>
