@@ -46,6 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             lang = "e"
             topBar.title = "Father Leung Homily"
             displayTitle = "Father Leung Homily"
+            UserDefaults.standard.set(false, forKey: "chinese")
             
         }else {
             
@@ -56,6 +57,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             lang = "c"
             topBar.title = "梁達財神父講道"
             displayTitle = "梁達財神父講道"
+            UserDefaults.standard.set(true, forKey: "chinese")
         }
         
         
@@ -185,7 +187,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(arrayObject[1])
             tablev = arrayObject as! [String]
             
-       //     table.reloadData()
             
             print("loadContent sucess")
             
@@ -418,7 +419,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         
-        cell.textLabel?.text = String(na + titleA[0] + "日 " + titleB1[0] + "-" + titleC2)
+        cell.textLabel?.text = String(na + "(" + titleA[0] + ") " + titleB1[0] + "-" + titleC2)
         
         return cell
         
@@ -471,6 +472,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         view.addSubview(activityIndicator)
         
+        
+        if let chi:Bool = UserDefaults.standard.object(forKey: "chinese") as? Bool {
+            
+            chinese = chi
+           
+            
+            if !chinese {
+                
+                print("not chinese")
+                langButton.setTitle("Eng", for: .normal)
+                chinese = false
+                displayYearLabel.text = "Year"
+                displayMonthLabel.text = "Month"
+                lang = "e"
+                topBar.title = "Father Leung Homily"
+                displayTitle = "Father Leung Homily"
+            }else{
+                print("chinese")
+            }
+            
+        }
         
         
         yearPickerView.selectRow(8, inComponent: 0, animated: true)
