@@ -3,13 +3,13 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon-Notify@2x-1.png",
+      "filename" : "Icon-Spotlight-42.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon-Notify@3x-1.png",
+      "filename" : "Icon-61.png",
       "scale" : "3x"
     },
     {
@@ -51,13 +51,13 @@
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "Icon-Notify@1x-1.png",
+      "filename" : "Icon-Spotlight-20.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "Icon-Notify@2x-2.png",
+      "filename" : "Icon-Spotlight-43.png",
       "scale" : "2x"
     },
     {
@@ -99,122 +99,14 @@
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "Icon-iPadPro@2x-1.png",
+      "filename" : "83.5@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "PLicon.png",
+      "filename" : "1024.png",
       "scale" : "1x"
-    },
-    {
-      "filename" : "Icon-40.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-40@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-40@3x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-60.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-60@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-60@3x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-72.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-72@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-76.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-76@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-76@3x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-83.5@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-iPadPro@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Notify@1x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Notify@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Notify@3x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Small-50.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Small-50@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Small.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Small@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Small@3x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Spotlight-40.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Spotlight-40@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon-Spotlight-40@3x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "Icon@2x.png",
-      "unassigned" : true
-    },
-    {
-      "filename" : "PLicon-1.png",
-      "unassigned" : true
     }
   ],
   "info" : {
