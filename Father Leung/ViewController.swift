@@ -65,6 +65,67 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    @IBAction func addButton(_ sender: Any) {
+        
+        
+        if currentMonth != month.last {
+        
+        currentMonth = String(Int(currentMonth)! + 1)
+        
+        }else if currentYear != year.last{
+            
+            currentMonth = "1"
+            currentYear = String(Int(currentYear)! + 1)
+        }else {
+            
+            print("return")
+            return
+            
+        }
+        
+        
+        
+        yearPickerView.selectRow(Int(currentYear)! - 2009 , inComponent: 0, animated: true)
+        monthPickerView.selectRow(Int(currentMonth)! - 1, inComponent: 0, animated: true)
+
+        loadpage(year: Int(currentYear)!, month: Int(currentMonth)!)
+        
+        
+        
+    }
+    
+    @IBAction func minusButton(_ sender: Any) {
+        
+        
+        if currentMonth != month.first {
+            
+            currentMonth = String(Int(currentMonth)! - 1)
+            
+        }else if currentYear != year.first{
+            
+            currentMonth = "12"
+            currentYear = String(Int(currentYear)! - 1)
+        }else {
+            
+            print("return")
+            return
+            
+        }
+        
+        
+        
+        yearPickerView.selectRow(Int(currentYear)! - 2009 , inComponent: 0, animated: true)
+        monthPickerView.selectRow(Int(currentMonth)! - 1, inComponent: 0, animated: true)
+        
+        loadpage(year: Int(currentYear)!, month: Int(currentMonth)!)
+        
+        
+        
+        
+    }
+    
+    
+    
     @IBAction func actionButton(_ sender: Any) {
         
         if playButtonEnable {
@@ -147,30 +208,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         table.reloadData()
     }
     
+  
     
-    @IBAction func goButton(_ sender: Any) {
-        
-        
-        let tableArr = UserDefaults.standard.object(forKey: "tableArray")
-        if let arrayObject = tableArr as? NSArray {
-            
-            print(arrayObject.count)
-            print(arrayObject[1])
-            tablev = arrayObject as! [String]
-            
-            table.reloadData()
-            
-            print("loadContent sucess")
-            
-            
-        }else{
-            
-            print("error load content")
-            
-        }
-        
-        
-    }
+    
     
     
     func loadContent(){
