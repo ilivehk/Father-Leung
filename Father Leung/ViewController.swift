@@ -20,7 +20,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     var chinese = true
     var lang = "c"
-    var displayTitle = "梁達財神父講道"
+    var displayTitle = "梁達材神父講道"
+    var talkList = [String]()
+    var talkAddress = [String]()
     
     
     @IBOutlet weak var displayMonthLabel: UILabel!
@@ -55,8 +57,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             displayYearLabel.text = "年"
             displayMonthLabel.text = "月"
             lang = "c"
-            topBar.title = "梁達財神父講道"
-            displayTitle = "梁達財神父講道"
+            topBar.title = "梁達材神父講道"
+            displayTitle = "梁達材神父講道"
             UserDefaults.standard.set(true, forKey: "chinese")
         }
         
@@ -95,16 +97,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     let month = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-    let year = ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", ]
+    let year = ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" ]
     
-    var currentYear = "2017"
-    var currentMonth = "10"
+    var currentYear = "2018"
+    var currentMonth = "1"
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
-    
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
@@ -113,7 +113,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else if pickerView == monthPickerView{
             return month[row]
         } else {
-            
             return month[row]
         }
         
@@ -131,9 +130,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return month.count
         }
         
-        
-        
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -147,7 +143,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         loadpage(year: Int(currentYear)!, month: Int(currentMonth)!)
         
-       // loadContent()
+        // loadContent()
         table.reloadData()
     }
     
@@ -187,9 +183,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print(arrayObject[1])
             tablev = arrayObject as! [String]
             
-            
+            generateTalkList()
             print("loadContent sucess")
-            
             
         }else{
             
@@ -201,8 +196,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func configureCommandCenter() {
         
+    
         UIApplication.shared.beginReceivingRemoteControlEvents()
-        
         let commandCenter = MPRemoteCommandCenter.shared()
         
         commandCenter.pauseCommand.addTarget { (event) -> MPRemoteCommandHandlerStatus in
@@ -356,7 +351,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     if let unwrappedData = data {
                         
                         let dataString = NSString(data: unwrappedData, encoding: String.Encoding.utf8.rawValue)!
-                     
+                        
                         let seperator = "<div class='day-number'>"
                         
                         
@@ -368,7 +363,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             self.loadContent()
                             self.table.reloadData()
                         }
-                     
+                        
                     }
                     
                     
@@ -387,12 +382,56 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    func generateTalkList() {
+        
+        talkList.removeAll()
+        talkAddress.removeAll()
+        var t = 1
+        
+        print("tablev has \(tablev.count) records")
+        
+        while tablev.count > t {
+        
+        //print(tablev[t])
+            
+        let talkA = NSString(string:tablev[t])
+       
+        let titleA = talkA.components(separatedBy: "</div>")
+        
+        let titleB = talkA.components(separatedBy: "<div class='liturgicalDay'>")
+        let titleB1 = titleB[1].components(separatedBy: "</div>")
+        //var titleC2 = String("")
+        if talkA.contains("<a href='"){
+            let titleC = talkA.components(separatedBy: "<a href='")
+            
+            for titleName in titleC {
+            
+                if titleName.contains("' target='_blank'>"){
+                
+            let titleC1 = titleName.components(separatedBy: "' target='_blank'>")
+            let titleC2 = titleC1[1].components(separatedBy: "</a>")
+                    
+            print("title is \(titleC2[0]) and link is \(titleC1[0])")
+            talkAddress.append(titleC1[0])
+            talkList.append("\(titleA[0])-\(titleB1[0].replacingOccurrences(of: "\n", with: ""))-\(titleC2[0])")
+           
+                }
+            }
+            
+            
+        }else {
+            //na = "N/A "
+        }
+        
+            t += 1
+        }
+        
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int   {
         
-        
-        
-        return tablev.count-1
-        
+        return talkList.count
+     
     }
     
     
@@ -400,26 +439,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
         
-        
-        let talkA = NSString(string:tablev[indexPath.row+1])
-        var na = ""
-        let titleA = talkA.components(separatedBy: "</div>")
-        
-        let titleB = talkA.components(separatedBy: "<div class='liturgicalDay'>")
-        let titleB1 = titleB[1].components(separatedBy: "</div>")
-        var titleC2 = String("")
-        if talkA.contains("target='_blank'>"){
-            let titleC = talkA.components(separatedBy: "target='_blank'>")
-            let titleC1 = titleC[1].components(separatedBy: "</a>")
-            titleC2 = titleC1[0]
-        }else {
-            
-            na = "N/A "
-        }
-        
-        
-        
-        cell.textLabel?.text = String(na + "(" + titleA[0] + ") " + titleB1[0] + "-" + titleC2)
+        cell.textLabel?.text = talkList[indexPath.row]
         
         return cell
         
@@ -444,22 +464,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         
-        
-        let mp3Link = NSString(string:tablev[indexPath.row+1])
-        
-        if mp3Link.contains("MP3"){
-            
-            let mp3Link1 = mp3Link.components(separatedBy: "<a href='")
-            
-            let mp3Link2 = mp3Link1[1].components(separatedBy: "' target='_blank'>")
-            
-            let mp3Link3 = "http://www.frpeterleung.com" + mp3Link2[0]
-            
-            print(mp3Link3)
-            
-            downloadFile(song: mp3Link3 as String)
-            
-        }
+        downloadFile(song: "http://www.frpeterleung.com\(talkAddress[indexPath.row])")
         
     }
     
@@ -476,7 +481,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let chi:Bool = UserDefaults.standard.object(forKey: "chinese") as? Bool {
             
             chinese = chi
-           
+            
             
             if !chinese {
                 
@@ -495,9 +500,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         
-        yearPickerView.selectRow(8, inComponent: 0, animated: true)
-        monthPickerView.selectRow(9, inComponent: 0, animated: true)
+        yearPickerView.selectRow(9, inComponent: 0, animated: true)
+        monthPickerView.selectRow(0, inComponent: 0, animated: true)
+       
+        loadpage(year: Int(currentYear)!, month: Int(currentMonth)!)
         
+        
+        /*
         let tableArr = UserDefaults.standard.object(forKey: "tableArray")
         if let arrayObject = tableArr as? NSArray {
             
@@ -507,6 +516,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             table.reloadData()
         }
+        */
     }
     
     func activity(On:Bool){
